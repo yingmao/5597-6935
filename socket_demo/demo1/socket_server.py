@@ -19,4 +19,4 @@ while True:
     print('the client from %s sends msg ：%s' % (address, client_data))
 
     conn.sendall('server has receive your msg.'.encode())
-    conn.close()
+conn.close()
