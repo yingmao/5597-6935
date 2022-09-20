@@ -1,10 +1,10 @@
 import threading
 
-# 定义全局变量VALUE
+# global variable
 VALUE = 0
 
 
-# 定义加法线程函数
+# adder
 def add_value():
     global VALUE
     for x in range(1000000):
@@ -12,7 +12,6 @@ def add_value():
     print('value = ', VALUE)
 
 
-# 定义两个线程并发执行加法操作
 def add_thread_main():
     for x in range(2):
         t = threading.Thread(target=add_value)

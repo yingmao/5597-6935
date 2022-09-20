@@ -18,7 +18,7 @@ def link_handler(link, client):
 
 ip_port = ('127.0.0.1', 9999)
 sk = socket.socket()
-# bug：需要bind ip	
+# bug：has to bind ip
 sk.bind(ip_port)
 sk.listen(5)
 
@@ -27,8 +27,8 @@ print('start socket server，waiting client...')
 while True:
     conn, address = sk.accept()
     print('create a new thread to receive msg from [%s:%s]' % (address[0], address[1]))
-    # 每当有新的连接过来，自动创建一个新的线程，
-    # 并将连接对象和访问者的ip信息作为参数传递给线程的执行函数
+    # create a thread for new clients
+    # with the socket and address
     t = threading.Thread(target=link_handler, args=(conn, address))
-    # bug处：线程必须调用start启动
+    # bug: has to call start()
     # t.start()

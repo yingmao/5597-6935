@@ -1,13 +1,13 @@
 import threading
 
-# 定义全局变量VALUE
+# global variable
 VALUE = 0
 
 # 1.def a lock：
 mutex = threading.Lock()
 
 
-# 定义加法线程函数
+# define the adder
 def add_value():
     global VALUE
     # 2. add lock
@@ -19,7 +19,7 @@ def add_value():
     print('value = ', VALUE)
 
 
-# 定义两个线程并发执行加法操作
+# two threads for the adder
 def add_thread_main():
     for x in range(2):
         t = threading.Thread(target=add_value)
