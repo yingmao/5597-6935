@@ -37,7 +37,7 @@ func main() {
     arith := new(Arith)
     rpc.Register(arith)
 
-    tcpAddr, err := net.ResolveTCPAddr("tcp", ":1234")
+    tcpAddr, err := net.ResolveTCPAddr("tcp", ":12340")
     checkError(err)
 
     listener, err := net.ListenTCP("tcp", tcpAddr)

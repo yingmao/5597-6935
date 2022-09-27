@@ -23,7 +23,7 @@ func main() {
     }
     serverAddress := os.Args[1]
 
-    client, err := rpc.DialHTTP("tcp", serverAddress+":1234")
+    client, err := rpc.DialHTTP("tcp", serverAddress+":12340")
     if err != nil {
         log.Fatal("dialing:", err)
     }

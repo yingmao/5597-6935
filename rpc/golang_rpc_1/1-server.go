@@ -37,7 +37,7 @@ func main() {
     rpc.Register(arith)
     rpc.HandleHTTP()
 
-    err := http.ListenAndServe(":1234", nil)
+    err := http.ListenAndServe(":12340", nil)
     if err != nil {
         fmt.Println(err.Error())
     }
